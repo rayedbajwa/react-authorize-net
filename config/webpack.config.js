@@ -1,9 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-    context: path.resolve(__dirname, './../src'),
     entry: {
-        app: './index.js'
+        app: './src/index.js'
     },
     module: {
     loaders: [
@@ -21,18 +22,31 @@ module.exports = {
         // Options to configure babel with
         query: {
             plugins: ['transform-runtime'],
-            presets: ['es2017', 'react', 'stage-0'],
+            presets: ['es2015', 'es2017', 'react'],
         }
         },
     ]
     },
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, './../dist'),
+        publicPath: '/publics',
         filename: '[name].bundle.js'
     },
+    plugins: [new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, './../src/index.html'),
+        inject: 'body'
+        }
+    )],
     resolve: {
         modules: [
             'node_modules'
         ]
-    }
+    },
+    devServer: {
+        contentBase: "./dist",
+        inline: true,
+        hot: true,
+        port: 8000
+    },
 };
