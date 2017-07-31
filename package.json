@@ -1,0 +1,61 @@
+{
+  "name": "react-authorize-net",
+  "version": "1.0.0",
+  "description": "React component for authorize net",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server  --hot --inline --progress --content-base dist/ --config ./config/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayedbajwa/react-authorize-net.git"
+  },
+  "keywords": [
+    "authorize",
+    "net",
+    "for",
+    "react",
+    "payment",
+    "react",
+    "payment",
+    "gateway",
+    "react",
+    "react",
+    "js",
+    "authorize",
+    "credit",
+    "cards",
+    "payment",
+    "react"
+  ],
+  "author": "M. Rayed Bajwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayedbajwa/react-authorize-net/issues"
+  },
+  "homepage": "https://github.com/rayedbajwa/react-authorize-net#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "react-dom": "^15.6.1",
+    "transform-runtime": "0.0.0",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "peerDependencies": {
+        "react": "~0.14.8 || ^15.0.0",
+        "react-dom": "~0.14.8 || ^15.0.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.25.0",
+    "react": "^15.6.1"
+  }
+}
