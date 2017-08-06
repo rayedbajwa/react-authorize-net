@@ -6,6 +6,13 @@ module.exports = {
     entry: {
         app: './src/index.js'
     },
+    target: 'web',
+    node: {
+        console: true,
+        fs: "empty",
+        tls: "empty",
+        net: "empty"
+    },
     module: {
     loaders: [
         {
@@ -32,12 +39,16 @@ module.exports = {
         publicPath: '/publics',
         filename: '[name].bundle.js'
     },
-    plugins: [new webpack.HotModuleReplacementPlugin(),
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
         template: path.resolve(__dirname, './../src/index.html'),
         inject: 'body'
-        }
-    )],
+        }),
+        new webpack.ContextReplacementPlugin(
+            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+            __dirname)
+    ],
     resolve: {
         modules: [
             'node_modules'
